@@ -1,0 +1,168 @@
+// COLORS
+
+// Primary
+$color-main-background: hsl(233, 47%, 7%);
+$color-card-background: hsl(244, 38%, 16%);
+$color-accent: hsl(277, 64%, 61%);
+// Neutral
+$color-white: hsl(0, 0%, 100%);
+$color-main-paragraph: hsla(0, 0%, 100%, 0.75);
+$color-stat-headings: hsla(0, 0%, 100%, 0.6);
+
+// TYPOGRAPHY
+
+// Size
+$font-size: 15px;
+// Weight
+$font-weight-light: 400;
+$font-weight-bold: 700;
+// Fonts
+$font-family-inter: "Inter", sans-serif;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    background-color: $color-main-background;
+    color: $color-white;
+    font-family: $font-family-inter;
+    font-size: $font-size;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.attribution {
+    padding: 30px 0;
+    
+    a {
+        color: $color-accent;
+    }
+    line-height: 25px;
+        text-align: center;
+}
+
+.card {
+    margin: 175px;
+    width: 90%;
+    background-color: $color-card-background;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-flow: row;
+
+    .left {
+        padding: 75px 100px 75px 75px;
+
+        .title {
+            font-weight: $font-weight-bold;
+            margin-bottom: 30px;
+
+            .accent {
+                color: $color-accent;
+            }
+        }
+
+        .main-paragraph {
+            font-weight: $font-weight-light;
+            color: $color-main-paragraph;
+            line-height: 25px;
+            margin-bottom: 60px;
+        }
+
+        .stats-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: flex-start;
+
+            .stat-item {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                .stat-description {
+                    color: $color-stat-headings;
+                    text-transform: uppercase;
+                    font-size: 12px;
+                }
+
+                .stat-value {
+                    font-weight: $font-weight-bold;
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+
+    .right {
+        background-color: $color-accent;
+        filter: brightness(120%) contrast(160%);
+        border-radius: 0 10px 10px 0;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+            filter: invert(10%) brightness(40%) contrast(90%);
+            border-radius: 0 10px 10px 0;
+        }
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    .card {
+        margin: 70px auto 0;
+        
+        .left {
+            padding: 50px;
+        }
+    }
+}
+
+@media screen and (max-width: 666px) {
+    .card {
+        margin: 20px 0;
+        grid-template-columns: 1fr;
+
+        .left {
+            padding: 30px;
+            order: 1;
+
+            .title,
+            .main-paragraph {
+                text-align: center;
+            }
+
+            .stats-group {
+                flex-direction: column;
+                align-items: center;
+
+                .stat-item {
+                    align-items: center;
+                }
+            }
+        }
+
+        .right {
+            border-radius: 10px 10px 0 0;
+
+            img {
+                border-radius: 10px 10px 0 0;
+            }
+        }
+    }
+}
