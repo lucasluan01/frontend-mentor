@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca:wght@100..400&display=swap');
+
+$color-orange: hsl(31, 77%, 52%);
+$color-cyan: hsl(184, 100%, 22%);
+$color-dark-cyan: hsl(179, 100%, 13%);
+$color-white-75: hsla(0, 0%, 100%, 0.75);
+$color-light-gray: hsl(0, 0%, 95%);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: $color-light-gray;
+
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 1.75;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.title {
+    font-size: 30px;
+    font-family: 'Big Shoulders Display', cursive;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.description {
+    color: $color-white-75;
+}
+
+.card-group {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+
+    >* {
+        height: 400px;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        .btn-learn-more {
+            padding: 8px 24px;
+            border-radius: 60px;
+            border: none;
+            font-size: 12px;
+            margin-top: auto;
+            background-color: white;
+            border: 2px solid white;
+            cursor: pointer;
+
+            &:active {
+                background-color: transparent;
+                color: white !important;
+            }
+        }
+
+        img {
+            margin-bottom: 20px;
+        }
+    }
+
+    .card-sedans {
+        flex: 1 1 250px;
+        background-color: $color-orange;
+
+        .btn-learn-more {
+            color: $color-orange;
+        }
+    }
+
+    .card-suvs {
+        flex: 1 1 250px;
+        background-color: $color-cyan;
+
+        .btn-learn-more {
+            color: $color-cyan;
+        }
+    }
+
+    .card-luxury {
+        flex: 1 1 250px;
+        background-color: $color-dark-cyan;
+
+        .btn-learn-more {
+            color: $color-dark-cyan;
+        }
+    }
+}
+
+.attribution {
+    width: 90%;
+    text-align: center;
+    margin: 40px;
+    font-weight: 500;
+}
