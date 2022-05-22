@@ -22,7 +22,10 @@ Users should be able to:
 
 ### Screenshot
 
-![Screenshot of solution](./screenshot.jpeg)
+![Desktop solution screenshot](./screenshot.jpeg)
+
+![Mobile solution screenshot](./screenshot-mobile.jpg)
+
 
 ### Links
 
