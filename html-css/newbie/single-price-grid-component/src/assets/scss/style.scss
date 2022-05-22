@@ -1,0 +1,156 @@
+// COLORS
+$color-cyan: hsl(179, 62%, 43%);
+$color-light-cyan: hsl(179, 62%, 46%);
+$color-bright-yellow: hsl(71, 73%, 54%);
+$color-light-gray: hsl(204, 43%, 93%);
+$color-grayish-blue: hsl(218, 22%, 67%);
+
+$radius: 10px;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Karla:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Karla, sans-serif;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-color: $color-light-gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin shadow {
+    box-shadow: 5px 5px 20px 2px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.container {
+    // margin: 70px 0;
+    @include shadow;
+    width: 90%;
+    max-width: 650px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: $radius;
+}
+
+.card {
+    flex: 1 1 0;
+
+    &-header {
+        background-color: white;
+        color: $color-grayish-blue;
+        border-radius: $radius $radius 0 0;
+        padding: 40px;
+
+        .title {
+            font-size: 1.5rem;
+            color: $color-cyan;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: $color-bright-yellow;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .paragraph {
+            line-height: 25px;
+        }
+    }
+
+    &-body {
+        color: white;
+        display: flex;
+        flex-wrap: wrap;
+
+        .subscription {
+            padding: 40px;
+            flex: 1 1 250px;
+            background-color: $color-cyan;
+            border-radius: 0 0 0 $radius;
+
+            .price {
+
+                font-weight: bold;
+                font-size: 30px;
+                margin: 20px 0 10px;
+
+                &::before {
+                    content: '$';
+                }
+
+                &::after {
+                    content: 'per month';
+                    color: $color-light-gray;
+                    font-weight: normal;
+                    font-size: 14px;
+                    vertical-align: middle;
+                    margin-left: 15px;
+                }
+            }
+
+            .btn-login {
+                @include shadow;
+                margin-top: 25px;
+                background-color: $color-bright-yellow;
+                color: white;
+                border-radius: 6px;
+                border: none;
+                width: 100%;
+                padding: 15px 0;
+
+                &:hover {
+                    background-color: hsl(71, 73%, 62%);
+                }
+
+                &:active {
+                    background-color: hsl(71, 73%, 48%);
+                }
+            }
+        }
+
+        .description {
+            flex: 1 1 250px;
+            padding: 40px;
+            background-color: $color-light-cyan;
+            border-bottom-right-radius: $radius;
+
+            .paragraph {
+                color: $color-light-gray;
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 555px) {
+    .card {
+        &-body {
+            .subscription {
+                border-radius: 0;
+            }
+
+            .description {
+                border-radius: 0 0 $radius $radius;
+            }
+        }
+    }
+}
