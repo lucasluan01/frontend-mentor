@@ -13,9 +13,8 @@ $color-light-gray: hsl(0, 0%, 95%);
     font-family: 'Lexend Deca', sans-serif;
 }
 
-html,
-body {
-    height: 100%;
+html, body {
+    min-height: 100%;
 }
 
 body {
@@ -23,11 +22,14 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    gap: 40px;
     background-color: $color-light-gray;
 
     font-weight: 200;
     font-size: 14px;
     line-height: 1.75;
+
+    margin: 40px 0;
 }
 
 .container {
@@ -118,6 +120,5 @@ body {
 .attribution {
     width: 90%;
     text-align: center;
-    margin: 40px;
     font-weight: 500;
 }

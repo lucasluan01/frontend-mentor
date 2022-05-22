@@ -28,7 +28,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution URL here](https://github.com/lucasluan01/frontend-mentor/tree/main/html-css/newbie/stats-preview-card-component)
+- Solution URL: [Solution URL here](https://github.com/lucasluan01/frontend-mentor/tree/main/html-css/newbie/single-price-grid-component)
 - Live Site URL: [Live site URL here](https://single-price-grid-component-lucasluan01.vercel.app)
 
 ## My process
