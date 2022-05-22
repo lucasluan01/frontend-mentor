@@ -43,6 +43,6 @@ Users should be able to:
 
 ## Author
 
-- Frontend Mentor - [@lucasluan01](https://www.frontendmentor.io/profile/yourusername)
-- Linkedin - [Lucas Luan dos Santos](https://www.linkedin.com/in/lucas-luan-dos-santos/)
+- Frontend Mentor - [@lucasluan01](https://www.frontendmentor.io/profile/lucasluan01)
+- Linkedin - [Lucas Luan dos Santos](https://www.linkedin.com/in/lucas-luan-dos-santos)
 - GitHub - [lucasluan01](https://github.com/lucasluan01)

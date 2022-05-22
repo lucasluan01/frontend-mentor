@@ -38,7 +38,7 @@ body {
 }
 
 .container {
-    // margin: 70px 0;
+    margin: 70px 0;
     @include shadow;
     width: 90%;
     max-width: 650px;
