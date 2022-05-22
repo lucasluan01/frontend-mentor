@@ -26,6 +26,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 @mixin shadow {
@@ -38,7 +39,7 @@ body {
 }
 
 .container {
-    margin: 70px 0;
+    margin: 70px 0 40px;
     @include shadow;
     width: 90%;
     max-width: 650px;
@@ -139,6 +140,11 @@ body {
             }
         }
     }
+}
+
+footer {
+    width: 90%;
+    text-align: center;
 }
 
 @media screen and (max-width: 555px) {
