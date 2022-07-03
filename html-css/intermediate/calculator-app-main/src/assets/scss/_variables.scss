@@ -1,0 +1,68 @@
+$blue-theme: (
+    // Backgrounds
+    body-bg: #3a4764,
+    keypad-bg: #232c43,
+    main-bg: #182034,
+
+    // Keys
+    key-bg-backspace: #637097,
+    shadow-key-backspace: #404e72,
+
+    key-bg-equal: #d03f2f,
+    shadow-key-equal: #93261a,
+    text-key-equal: #ffffff,
+
+    key-bg: #eae3dc,
+    shadow-key: #b4a597,
+
+    // Text
+    text-keypad: #444b5a,
+    text: #ffffff,
+    text-white: #ffffff,
+);
+
+$gray-theme: (
+    // Backgrounds
+    body-bg: #e6e6e6,
+    keypad-bg: #d1cccc,
+    main-bg: #ededed,
+
+    // Keys
+    key-bg-backspace: #377f86,
+    shadow-key-backspace: #1b5f65,
+
+    key-bg-equal: #ca5502,
+    shadow-key-equal: #893901,
+    text-key-equal: #ffffff,
+
+    key-bg: #e5e4e1,
+    shadow-key: #a69d91,
+
+    // Text
+    text-keypad: #35352c,
+    text: #35352c,
+    text-white: #ffffff,
+);
+
+$violet-theme: (
+    // Backgrounds
+    body-bg: #160628,
+    keypad-bg: #1d0934,
+    main-bg: #1d0934,
+
+    // Keys
+    key-bg-backspace: #58077d,
+    shadow-key-backspace: #bc15f4,
+
+    key-bg-equal: #00e0d1,
+    shadow-key-equal: #6cf9f2,
+    text-key-equal: #160628,
+
+    key-bg: #341c4f,
+    shadow-key: #871c9c,
+
+    // Text
+    text-keypad: #ffe53d,
+    text: #ffe53d,
+    text-white: #ffffff
+);

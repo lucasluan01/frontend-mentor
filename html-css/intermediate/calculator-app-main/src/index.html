@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+  <link rel="stylesheet" href="./assets/css/style.min.css" />
+  <title>Frontend Mentor | Calculator app</title>
+</head>
+
+<body data-theme='blue'>
+  <main class="calculator">
+    <div class="calculator__header">
+      <div class="calculator__logo">
+        calc
+      </div>
+      <div class="calculator__themes">
+        <span class="calculator__title">Theme</span>
+        <div class="calculator__slider">
+          <div class="calculator__label-container">
+            <label class="calculator__label-item">1</label>
+            <label class="calculator__label-item">2</label>
+            <label class="calculator__label-item">3</label>
+          </div>
+          <input type="range" min="1" max="3" value="1" class="calculator__range" id="slider" onchange="changeTheme(this.value)">
+        </div>
+      </div>
+    </div>
+    <div class="calculator__display">
+      <span class="calculator__expression" id="expression"></span>
+    </div>
+    <div class="calculator__keypad">
+      <button onClick="keyPress(this.textContent)" class="calculator__key">7</button>
+      <button onClick="keyPress(this.textContent)" class="calculator__key">8</button>
+      <button onClick="keyPress(this.textContent)" class="calculator__key">9</button>
+      <button onClick="keyPress(this.textContent)" class="calculator__key calculator__key--backspace-key">Del</button>
+      <button onClick="keyPress(this.textContent)" class="calculator__key">4</button>
+      <button onClick="keyPress(this.textContent)" class="calculator__key">5</button>
+      <button onClick="keyPress(this.textContent)" class="calculator__key">6</button>
+      <button onClick="keyPress(this.textContent)" class="calculator__key">+</button>
+      <button onClick="keyPress(this.textContent)" class="calculator__key">1</button>
+      <button onClick="keyPress(this.textContent)" class="calculator__key">2</button>
+      <button onClick="keyPress(this.textContent)" class="calculator__key">3</button>
+      <button onClick="keyPress(this.textContent)" class="calculator__key">-</button>
+      <button onClick="keyPress(this.textContent)" class="calculator__key">.</button>
+      <button onClick="keyPress(this.textContent)" class="calculator__key">0</button>
+      <button onClick="keyPress(this.textContent)" class="calculator__key">/</button>
+      <button onClick="keyPress(this.textContent)" class="calculator__key">x</button>
+      <button onClick="keyPress(this.textContent)"
+        class="calculator__key--span-2 calculator__key--backspace-key">Reset</button>
+      <button onClick="keyPress(this.textContent)" class="calculator__key--span-2 calculator__key--equal-key">=</button>
+    </div>
+  </main>
+
+  <div class="attribution">
+    Challenge by <a class="attribution__link" href="https://www.frontendmentor.io?ref=challenge"
+      target="_blank">Frontend Mentor</a>.
+    Coded by <a class="attribution__link" href="#">Your Name Here</a>.
+  </div>
+
+  <script src="./js/index.js"></script>
+</body>
+
+</html>

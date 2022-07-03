@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+@import './_variables.scss';
+
+html,
+body {
+    min-height: 100vh;
+    width: 100vw;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    font-size: 1.25rem;
+    font-family: 'League Spartan', sans-serif;
+    box-sizing: border-box;
+    color: var(--color-text);
+    font-weight: 700;
+}
+
+body {
+    display: grid;
+    grid-template-columns: minmax(0, auto);
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-body-bg);
+    padding: 20px;
+
+    &[data-theme='blue'] {
+
+        @each $name,
+        $color in $blue-theme {
+            --color-#{$name}:#{$color};
+        }
+
+        transition: .5s;
+    }
+
+    &[data-theme='gray'] {
+
+        @each $name,
+        $color in $gray-theme {
+            --color-#{$name}:#{$color};
+        }
+
+        transition: .5s;
+    }
+
+    &[data-theme='violet'] {
+
+        @each $name,
+        $color in $violet-theme {
+            --color-#{$name}:#{$color};
+        }
+
+        transition: .5s;
+    }
+}
+
+.calculator {
+
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+    }
+
+    &__themes {
+        display: flex;
+        align-items: flex-end;
+        gap: 20px;
+    }
+
+    &__slider {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    &__range {
+        width: 50px;
+        -webkit-appearance: none;
+        position: relative;
+        overflow: hidden;
+        border-radius: 50px;
+        cursor: pointer;
+        padding: 3px;
+        background-color: var(--color-keypad-bg);
+
+        &::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 12px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background: var(--color-key-bg-equal);
+        }
+    }
+
+    &__label-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__label-item,
+    &__title {
+        font-size: .5rem;
+        text-transform: uppercase;
+    }
+
+    &__display {
+        background-color: var(--color-main-bg);
+        border-radius: inherit;
+        padding: 20px;
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    &__expression {
+        font-size: 2rem;
+        overflow-x: auto;
+    }
+
+    &__keypad {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+        padding: 20px;
+        background-color: var(--color-keypad-bg);
+        border-radius: inherit;
+    }
+
+    &__key {
+        padding: 8px 16px;
+        border-radius: inherit;
+        color: var(--color-text-keypad);
+        border-bottom: 3px solid var(--color-shadow-key);
+        background-color: var(--color-key-bg);
+
+        &--span-2 {
+            @extend .calculator__key;
+            grid-column: span 2;
+        }
+
+        &--backspace-key {
+            @extend .calculator__key;
+            background-color: var(--color-key-bg-backspace);
+            border-bottom: 3px solid var(--color-shadow-key-backspace);
+            color: var(--color-text-white);
+            text-transform: uppercase;
+            font-size: 1rem;
+        }
+
+        &--equal-key {
+            @extend .calculator__key;
+            background-color: var(--color-key-bg-equal);
+            border-bottom: 3px solid var(--color-shadow-key-equal);
+            color: var(--color-text-key-equal);
+        }
+
+        &:active {
+            filter: brightness(1.5);
+        }
+    }
+
+}
+
+.attribution,
+.attribution__link {
+    font-size: 0.875rem;
+    text-align: center;
+    line-height: 1.5;
+}
