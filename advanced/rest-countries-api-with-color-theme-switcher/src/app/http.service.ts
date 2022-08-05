@@ -23,4 +23,8 @@ export class HttpService {
     return this._http.get(`${environment.urlBase}/region/${region}`);
   }
 
+  getCountryByCodes(code: string) {
+    return this._http.get(`${environment.urlBase}/alpha?codes=${code}`);
+  }
+
 }

@@ -1,4 +1,31 @@
 :host {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.btn-back {
+    width: min-content;
+    padding: 10px 40px;
+    font-size: .875rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 6px;
+    background-color: var(--color-elements);
+    color: var(--color-text);
+    border: none;
+
+    &__icon {
+        font-size: 1rem;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.country {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 60px;
@@ -19,8 +46,9 @@
 
     .grid {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
+        grid-template-columns: 50% 50%;
+            gap: 5px;
+            max-width: 600px;
 
         .property {
             font-size: .875rem;
@@ -39,9 +67,24 @@
     }
 }
 
-// media 375px
+.country-tags {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: .875rem;
+    font-weight: bold;
+    
+    &__item {
+        border-radius: 6px;
+        background-color: var(--color-elements);
+        font-weight: normal;
+        padding: 7px 14px;
+    }
+}
 @media (max-width: 375px) {
     .datails .grid {
-        grid-template-columns: 160px;
+        grid-template-columns: 1fr;
     }
 }

@@ -1,3 +1,4 @@
+import { CountryDetailsComponent } from './country-details/country-details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
@@ -11,6 +12,7 @@ import { CardComponent } from './home/card/card.component';
   declarations: [
     AppComponent,
     HomeComponent,
+    CountryDetailsComponent,
     CardComponent
   ],
   imports: [

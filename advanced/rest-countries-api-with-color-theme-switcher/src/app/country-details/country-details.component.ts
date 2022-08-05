@@ -1,16 +1,19 @@
 import { HttpService } from './../http.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-country-details',
   templateUrl: './country-details.component.html',
-  styleUrls: ['./country-details.component.scss']
+  styleUrls: ['./country-details.component.scss'],
+  
 })
 export class CountryDetailsComponent implements OnInit {
 
   country: any;
   name: string = '';
+  borderCountries: any;
   Object = Object;
 
   constructor(
@@ -28,6 +31,9 @@ export class CountryDetailsComponent implements OnInit {
   getCountryByName() {
     this._httpService.getCountryByName(this.name).subscribe((data: any) => {
       this.country = data[0];
+
+      this.getBorders();
+      
     });
   }
 
@@ -50,6 +56,23 @@ export class CountryDetailsComponent implements OnInit {
       return Object.keys(this.country.languages).map((language: any) => this.country.languages[language]);
     else
       return 'Not available';
+  }
+
+  getBorders() {
+    if (this.country?.borders) {
+      let countryCodes = Object.keys(this.country.borders).map((border: any) => this.country.borders[border]);
+
+      console.log(countryCodes);
+
+      this._httpService.getCountryByCodes(countryCodes.join(',')).subscribe(
+        (data: any) => {
+          console.log(data);
+          this.borderCountries = data.map((country: any) => country.name.common);
+        }
+      );
+    }
+    else
+      this.borderCountries = [];
   }
 
 }

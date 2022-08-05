@@ -1,39 +1,51 @@
-<img class="flag" src="{{ country?.flags?.svg || country?.flags?.png }}" alt="{{country?.name?.common}} Flag" />
+<button class="btn-back shadow" routerLink="/">
+    <span class="btn-back__icon material-icons">arrow_back</span>
+    Back
+</button>
+<div class="country">
+    <img class="flag" src="{{ country?.flags?.svg || country?.flags?.png }}" alt="{{country?.name?.common}} Flag" />
 
-<div class="datails">
-    <h2 class="name">{{ country?.name?.common }}</h2>
-    <div class="grid">
-        <p class="property">
-            Capital:
-            <span class="value">{{ country?.capital }}</span>
-        </p>
-        <p class="property">
-            Native Name:
-            <span class="value"> {{ getNativeName() }} </span>
-        </p>
-        <p class="property">
-            Population:
-            <span class="value">{{ country?.population }}</span>
-        </p>
-        <p class="property">
-            Top Level Domain:
-            <span class="value">{{ country?.tld }}</span>
-        </p>
-        <p class="property">
-            Currencies:
-            <span class="value">{{ getCurrencies() }}</span>
-        </p>
-        <p class="property">
-            Region:
-            <span class="value">{{ country?.region }}</span>
-        </p>
-        <p class="property">
-            Languages:
-            <span class="value">{{ getLanguages() }}</span>
-        </p>
-        <p class="property">
-            Subregion:
-            <span class="value">{{ country?.subregion }}</span>
-        </p>
+    <div class="datails">
+        <h2 class="name">{{ country?.name?.common }}</h2>
+        <div class="grid">
+            <p class="property">
+                Capital:
+                <span class="value">{{ country?.capital }}</span>
+            </p>
+            <p class="property">
+                Native Name:
+                <span class="value"> {{ getNativeName() }} </span>
+            </p>
+            <p class="property">
+                Population:
+                <span class="value">{{ country?.population }}</span>
+            </p>
+            <p class="property">
+                Top Level Domain:
+                <span class="value">{{ country?.tld }}</span>
+            </p>
+            <p class="property">
+                Currencies:
+                <span class="value">{{ getCurrencies() }}</span>
+            </p>
+            <p class="property">
+                Region:
+                <span class="value">{{ country?.region }}</span>
+            </p>
+            <p class="property">
+                Languages:
+                <span class="value">{{ getLanguages() }}</span>
+            </p>
+            <p class="property">
+                Subregion:
+                <span class="value">{{ country?.subregion }}</span>
+            </p>
+        </div>
+        <div class="country-tags">
+            Border Countries:
+            <div class="country-tags__item shadow" *ngFor="let border of borderCountries">
+                {{ border }}
+            </div>
+        </div>
     </div>
 </div>
