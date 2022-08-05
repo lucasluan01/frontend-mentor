@@ -62,11 +62,8 @@ export class CountryDetailsComponent implements OnInit {
     if (this.country?.borders) {
       let countryCodes = Object.keys(this.country.borders).map((border: any) => this.country.borders[border]);
 
-      console.log(countryCodes);
-
       this._httpService.getCountryByCodes(countryCodes.join(',')).subscribe(
         (data: any) => {
-          console.log(data);
           this.borderCountries = data.map((country: any) => country.name.common);
         }
       );
