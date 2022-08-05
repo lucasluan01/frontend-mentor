@@ -1,0 +1,36 @@
+:host {
+    background-color: var(--color-elements);
+
+    &:hover {
+        transform: scale(1.125);
+        cursor: pointer;
+    }
+    transition: 0.2s linear;
+}
+
+.flag {
+    border-radius: 6px 6px 0 0;
+    height: 150px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.body {
+    padding: 20px;
+
+    .name {
+        font-weight: bold;
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .property {
+        font-size: .875rem;
+        margin-bottom: 7px;
+    }
+
+    .value {
+        color: var(--color-text2);
+        font-weight: normal;
+    }
+}

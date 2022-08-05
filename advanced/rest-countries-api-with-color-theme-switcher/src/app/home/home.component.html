@@ -1,0 +1,19 @@
+<div class="group">
+    <div class="search">
+        <span class="search__icon material-icons">search</span>
+        <input class="search__input shadow radius" type="text" placeholder="Search for a country" #query (keyup)="onSearch(query.value)">
+    </div>
+    
+    <select class="select-region shadow" (change)="onRegion($event)">
+        <option value="">Filter by region</option>
+        <option value="africa">Africa</option>
+        <option value="america">America</option>
+        <option value="asia">Asia</option>
+        <option value="europe">Europe</option>
+        <option value="oceania">Oceania</option>
+    </select>
+</div>
+
+<div class="countries">
+    <app-card class="radius shadow" *ngFor="let country of countries" [country]="country" [routerLink]="['/country-details', country.name.common]"></app-card>
+</div>

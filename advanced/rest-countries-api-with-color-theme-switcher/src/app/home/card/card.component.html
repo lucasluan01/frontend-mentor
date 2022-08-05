@@ -1,0 +1,17 @@
+<img class="flag" src="{{ country.flags.svg || country.flags.png }}" alt="{{country.name.common}} Flag" />
+
+<div class="body">
+    <h2 class="name">{{ country.name.common }}</h2>
+    <p class="property">
+        Population:
+        <span class="value">{{ country.population }}</span>
+    </p>
+    <p class="property">
+        Region:
+        <span class="value">{{ country.region }}</span>
+    </p>
+    <p class="property">
+        Capital:
+        <span class="value">{{ country.capital }}</span>
+    </p>
+</div>

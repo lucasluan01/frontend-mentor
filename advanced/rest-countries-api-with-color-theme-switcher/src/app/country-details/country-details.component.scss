@@ -1,0 +1,47 @@
+:host {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 60px;
+    align-items: center;
+}
+
+.flag {
+    border-radius: 6px;
+    max-width: 100%;
+}
+
+.datails {
+    .name {
+        font-weight: bold;
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+
+        .property {
+            font-size: .875rem;
+            margin-bottom: 15px;
+            font-weight: bold;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .value {
+            color: var(--color-text2);
+            font-weight: normal;
+        }
+    }
+}
+
+// media 375px
+@media (max-width: 375px) {
+    .datails .grid {
+        grid-template-columns: 160px;
+    }
+}
