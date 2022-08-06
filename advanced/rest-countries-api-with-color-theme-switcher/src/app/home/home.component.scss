@@ -35,15 +35,30 @@
 }
 
 .select-region {
-    outline: none;
-    border: none;
+    border-radius: 6px;
     background-color: var(--color-elements);
     color: var(--color-text);
-    padding: 10px 20px;
+    padding: 8px 16px;
+    border: 0;
+    outline: 0;
 
-    &::-ms-expand {
-        display: none;
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 1em;
+        background-color: tomato;
+        transition: .25s all ease;
+        pointer-events: none;
     }
+
+    &__option {
+        &:is(:active, :checked, :focus, :hover) {
+            background-color: teal;
+        }
+    }
+
 }
 
 .countries {
